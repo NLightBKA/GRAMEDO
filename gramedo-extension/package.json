@@ -1,0 +1,98 @@
+{
+  "name": "gramedo",
+  "displayName": "GRAMEDO — RAG Memory Indexer",
+  "description": "Graph-based RAG Memory with Code Structure Intelligence. Scans your project and builds a structured knowledge graph for AI context retrieval.",
+  "version": "0.1.0",
+  "publisher": "gramedo",
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "RAG",
+    "memory",
+    "graph",
+    "AST",
+    "code analysis",
+    "AI"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gramedo.openPanel",
+        "title": "Open GRAMEDO Panel",
+        "category": "GRAMEDO",
+        "icon": "$(brain)"
+      },
+      {
+        "command": "gramedo.update",
+        "title": "Update Memory Index",
+        "category": "GRAMEDO",
+        "icon": "$(refresh)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "gramedo-container",
+          "title": "GRAMEDO",
+          "icon": "media/icon-activity.svg"
+        }
+      ]
+    },
+    "views": {
+      "gramedo-container": [
+        {
+          "type": "webview",
+          "id": "gramedo.panel",
+          "name": "RAG Memory Indexer"
+        }
+      ]
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "gramedo.openPanel"
+        },
+        {
+          "command": "gramedo.update"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "GRAMEDO",
+      "properties": {
+        "gramedo.projectRoot": {
+          "type": "string",
+          "default": "",
+          "description": "Override the project root directory for GRAMEDO indexing. Leave empty to use the first workspace folder."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "node build.js --production",
+    "compile": "node build.js",
+    "watch": "node build.js --watch",
+    "copy-wasm": "node scripts/copy-wasm.js",
+    "build": "npm run copy-wasm && npm run compile"
+  },
+  "dependencies": {
+    "web-tree-sitter": "^0.22.6",
+    "tree-sitter-wasms": "^0.1.12",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.21.0"
+  }
+}

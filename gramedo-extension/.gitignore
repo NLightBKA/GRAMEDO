@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+out/
+
+# WASM files (large, restored by `npm run copy-wasm`)
+resources/wasm/
+
+# Generated memory indexes
+.memory/
+
+# VS Code test cache
+.vscode-test/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
