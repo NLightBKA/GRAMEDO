@@ -4,6 +4,10 @@
   "description": "Graph-based RAG Memory with Code Structure Intelligence. Scans your project and builds a structured knowledge graph for AI context retrieval.",
   "version": "0.1.0",
   "publisher": "gramedo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NLightBKA/GRAMEDO"
+  },
   "icon": "media/icon.png",
   "engines": {
     "vscode": "^1.85.0"

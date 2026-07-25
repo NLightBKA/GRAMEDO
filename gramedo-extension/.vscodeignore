@@ -1,10 +1,9 @@
-out/**
+out/**/*.map
 node_modules/**
-src/**
+src/**/*.ts
 .vscode-test/**
 .gitignore
 .eslintrc.json
 build.js
 tsconfig.json
 scripts/**
-**/*.map

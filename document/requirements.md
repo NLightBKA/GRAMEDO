@@ -15,7 +15,7 @@
 
 Hệ thống phải có khả năng phân tích source code của các ngôn ngữ sau:
 
-| Ngôn ngữ       | Extension tiêu biểu            | Parser cần hỗ trợ              |
+| Ngôn ngữ       | Extension tiêu biểu           | Parser cần hỗ trợ              |
 |----------------|-------------------------------|--------------------------------|
 | Java           | `.java`                       | AST (JavaParser / Tree-sitter) |
 | JavaScript     | `.js`, `.mjs`, `.cjs`         | AST (Babel / Tree-sitter)      |
